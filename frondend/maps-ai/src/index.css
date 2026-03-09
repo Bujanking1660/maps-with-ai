@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #8b5cf6;
+  --primary-glow: rgba(139, 92, 246, 0.5);
+  --bg-dark: #030014;
+  --bg-light: #f8fafc;
+  --glass-white: rgba(255, 255, 255, 0.4);
+  --glass-dark: rgba(10, 10, 20, 0.35);
+  --glass-border-light: rgba(255, 255, 255, 0.6);
+  --glass-border-dark: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Premium Clear Glass */
+.glass {
+  background: var(--glass-white);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border-light);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15);
+}
+
+.glass-dark {
+  background: var(--glass-dark);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border-dark);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* AI Gradient Backgrounds */
+.ai-gradient-bg {
+  background-color: var(--bg-dark);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.25) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.25) 0px, transparent 50%),
+    radial-gradient(
+      at 100% 100%,
+      rgba(236, 72, 153, 0.25) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.25) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.ai-gradient-bg-light {
+  background-color: var(--bg-light);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+    radial-gradient(
+      at 100% 100%,
+      rgba(236, 72, 153, 0.15) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Animated Loading Bar */
+@keyframes loading-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.loading-bar {
+  animation: loading-progress 1.5s infinite ease-in-out;
+}
+
+/* Hide Leaflet Attributions */
+.leaflet-control-attribution,
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+.leaflet-container:focus {
+  outline: none;
+}
+
+/* Custom Scrollbar for Instructions */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.3);
+  border-radius: 20px;
+}
